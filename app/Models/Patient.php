@@ -2,14 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class Clinic extends Model
+class Patient extends Model
 {
     use CrudTrait;
-    use HasFactory;
 
     /*
     |--------------------------------------------------------------------------
@@ -17,7 +15,7 @@ class Clinic extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'clinics';
+    protected $table = 'patients';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
@@ -30,11 +28,6 @@ class Clinic extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
-
-    public function services()
-    {
-        return $this->belongsToMany(Service::class);
-    }
 
     /*
     |--------------------------------------------------------------------------
