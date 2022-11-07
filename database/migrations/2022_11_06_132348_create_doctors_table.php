@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreateClinicsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +13,16 @@ class CreateClinicsTable extends Migration
      */
     public function up()
     {
-        Schema::create('clinics', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name');
+        Schema::create('doctors', function (Blueprint $table) {
+            $table->id();
+            $table->string('given_name');
             $table->string('description');
-            $table->string('city');
             $table->string('address');
+            $table->string('city');
             $table->string('phone_number');
             $table->string('email');
-            $table->bigInteger('consult_price')->default(10);
+            $table->string('user_id');
+            $table->string('clinic_id');
             $table->timestamps();
         });
     }
@@ -32,6 +34,6 @@ class CreateClinicsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clinics');
+        Schema::dropIfExists('doctors');
     }
-}
+};

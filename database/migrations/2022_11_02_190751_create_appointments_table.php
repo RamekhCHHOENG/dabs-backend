@@ -18,6 +18,7 @@ class CreateAppointmentsTable extends Migration
             $table->string('email')->nullable();
             $table->string('phone_number')->nullable();
             $table->dateTime('datetime');
+            $table->string('description');
             $table->timestamps();
         });
     }
