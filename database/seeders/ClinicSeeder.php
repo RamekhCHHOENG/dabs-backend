@@ -15,6 +15,41 @@ class ClinicSeeder extends Seeder
      */
     public function run()
     {
-        Clinic::factory()->count(3)->create();
+        $clinic = [
+            [
+                'name' => 'Ramekh Denist',
+                'code' => 'RMRF',
+                'description' => 'Dentist Specialty',
+                'phone_number' => '',
+                'city' => 'Phnom Penh',
+                'address' => '',
+                'email' => '',
+                'consult_price' => 10,
+            ],
+            [
+                'name' => 'Hello Heart',
+                'code' => 'HHM',
+                'description' => 'Cardiology Specialty',
+                'phone_number' => '',
+                'city' => 'Phnom Penh',
+                'address' => '',
+                'email' => '',
+                'consult_price' => 10,
+            ],
+            [
+                'name' => 'JE Eye Specialist',
+                'code' => 'JKE',
+                'description' => 'Eye Specialty',
+                'phone_number' => '',
+                'city' => 'Phnom Penh',
+                'address' => '',
+                'email' => '',
+                'consult_price' => 10,
+            ]
+            ];
+
+        foreach ($clinic as $item) {
+            Clinic::create($item);
+        }
     }
 }

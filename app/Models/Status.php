@@ -10,6 +10,11 @@ class Status extends Model
     use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'code'
+    ];
+
     private function appointments()
     {
         return $this->belongsToMany(Appointment::class);

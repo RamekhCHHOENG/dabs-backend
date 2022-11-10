@@ -27,5 +27,15 @@ class DatabaseSeeder extends Seeder
 
         $this->call([ClinicSeeder::class]);
         $this->command->info('User table seeded!');
+
+        $this->call([ServiceSeeder::class]);
+        $this->command->info('User table seeded!');
+
+
+        $this->call([SpecialtySeeder::class]);
+        $this->command->info('User table seeded!');
+
+        $this->call([StatusSeeder::class]);
+        $this->command->info('User table seeded!');
     }
 }
