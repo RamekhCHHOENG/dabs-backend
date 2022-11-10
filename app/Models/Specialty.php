@@ -10,6 +10,11 @@ class Specialty extends Model
     use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'code'
+    ];
+
     public function doctors()
     {
         return $this->belongsToMany(Doctor::class);
