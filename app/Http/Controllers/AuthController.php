@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Doctor;
+use App\Models\Clinic;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-
 
     protected function genterateAccessToken($user)
     {
@@ -18,19 +19,36 @@ class AuthController extends Controller
 
     protected function register(Request $request)
     {
-        $request->validate([
-            "name" => 'required',
-            "email" => 'required|email',
-            "password" => 'required|min:8',
-        ]);
+        $response;
+        $name = $request->userType === 1 ? $request->firstName.' '.$request->lastName : $request->name;
 
+        // dd($request->name);
         $user = User::create([
-            "name" => $request->name,
+            "name" => $name,
             "email" => $request->email,
             "password" => bcrypt($request->password),
         ]);
 
-        return response()->json($user);
+        if($request->userType === 1) {
+            $doctor = Doctor::create([
+                "first_name" => $request->firstName,
+                "last_name" => $request->lastName,
+                "email" => $request->email,
+                "phone_number" => $request->email,
+                "user_id" => $user->id,
+            ]);
+            $response = $doctor;
+        } else {
+            $clinic = Clinic::create([
+                "name" => $name,
+                "email" => $request->email,
+                "phone_number" => $request->email,
+                "user_id" => $user->id,
+            ]);
+            $response = $clinic;
+        }
+        // dd($user);
+        return response()->json($response);
     }
 
     // public function login(Request $request)

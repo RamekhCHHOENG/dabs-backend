@@ -24,7 +24,6 @@ class ClinicSeeder extends Seeder
                 'city' => 'Phnom Penh',
                 'address' => '',
                 'email' => '',
-                'consult_price' => 10,
             ],
             [
                 'name' => 'Hello Heart',
@@ -34,7 +33,6 @@ class ClinicSeeder extends Seeder
                 'city' => 'Phnom Penh',
                 'address' => '',
                 'email' => '',
-                'consult_price' => 10,
             ],
             [
                 'name' => 'JE Eye Specialist',
@@ -44,7 +42,6 @@ class ClinicSeeder extends Seeder
                 'city' => 'Phnom Penh',
                 'address' => '',
                 'email' => '',
-                'consult_price' => 10,
             ]
             ];
 

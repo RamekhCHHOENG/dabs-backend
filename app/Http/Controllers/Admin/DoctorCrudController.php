@@ -84,7 +84,8 @@ class DoctorCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('given_name');
+        CRUD::column('first_name');
+        CRUD::column('last_name');
         CRUD::column('description');
         CRUD::column('address');
         CRUD::column('city');
@@ -110,7 +111,8 @@ class DoctorCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::field('given_name');
+        CRUD::field('first_name');
+        CRUD::field('lastname_name');
         CRUD::field('description');
         CRUD::field('address');
         CRUD::field('city');
