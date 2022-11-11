@@ -9,6 +9,14 @@ class Doctor extends Model
 {
     use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasFactory;
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'email',
+        'phone_number',
+        'password',
+        'user_id'
+    ];
 
     public function specialties()
     {

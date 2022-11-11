@@ -15,14 +15,15 @@ return new class extends Migration
     {
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();
-            $table->string('given_name');
-            $table->string('description');
-            $table->string('address');
-            $table->string('city');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('address')->default('');
+            $table->string('city')->default('');
             $table->string('phone_number');
             $table->string('email');
-            $table->string('user_id');
-            $table->string('clinic_id');
+            $table->string('user_id')->default('');
+            $table->string('clinic_id')->default('');
+            $table->bigInteger('consult_price')->default(10);
             $table->timestamps();
         });
     }

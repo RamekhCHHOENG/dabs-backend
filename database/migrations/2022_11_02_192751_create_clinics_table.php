@@ -15,13 +15,12 @@ class CreateClinicsTable extends Migration
         Schema::create('clinics', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('code');
-            $table->string('description');
+            $table->string('code')->default('');
+            $table->string('description')->default('');
             $table->string('city')->default('');
-            $table->string('address');
+            $table->string('address')->default('');
             $table->string('phone_number');
             $table->string('email');
-            $table->bigInteger('consult_price')->default(10);
             $table->timestamps();
         });
     }
